@@ -1,0 +1,17 @@
+# R
+.Rhistory
+.Rproj.user/
+.Ruserdata
+.RData
+
+# Knitted output
+*.html
+*_files/
+*_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/*

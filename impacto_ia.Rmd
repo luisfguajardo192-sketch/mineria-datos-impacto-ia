@@ -1,0 +1,11 @@
+---
+title: "Impacto de la IA"
+output: html_document
+author:
+  - Luis-Felipe Guajardo Torres
+  - Pablo Morales Carvallo
+  - rancisco Bahamondes Castro
+  - Gabriel Lafertte Cárcamo
+  - Diego Meléndez Córdova
+---
+
