@@ -12,7 +12,9 @@ author:
   - Diego Meléndez Córdova
 ---
 
-```{r setup, include=FALSE}
+-Instalación de librerías y defaults del proyecto-
+
+```{r setup, echo = TRUE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(
   cols.print = 5,
   echo    = TRUE,
