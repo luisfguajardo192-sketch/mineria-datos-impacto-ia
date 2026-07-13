@@ -48,3 +48,9 @@ set_flextable_defaults(
 #leer los datos
 ai_student_impact<-read.csv("ai_student_impact_dataset.csv",header = TRUE)
 ```
+
+
+### Imprimir las primeras filas
+```{r}
+flextable(head(ai_student_impact))
+```
