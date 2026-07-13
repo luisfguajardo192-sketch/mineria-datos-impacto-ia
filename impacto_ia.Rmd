@@ -9,3 +9,16 @@ author:
   - Diego Meléndez Córdova
 ---
 
+```{r setup, include=FALSE}
+library(tidyverse)
+library(visdat)
+library(dlookr)
+library(flextable)
+library(skimr)
+library(qqplotr)
+library(ggpmisc)
+library(VIM)
+library(mice)
+library(gridExtra)
+```
+
