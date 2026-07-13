@@ -51,8 +51,14 @@ set_flextable_defaults(
 ai_student_impact<-read.csv("ai_student_impact_dataset.csv",header = TRUE)
 ```
 
-
 ### Imprimir las primeras filas
+
 ```{r}
 flextable(head(ai_student_impact))
 ```
+
+### Diagnóstico (ver si hay datos faltantes)
+```{r}
+diagnose(ai_student_impact) %>% flextable()#diagnostico de los datos
+```
+
