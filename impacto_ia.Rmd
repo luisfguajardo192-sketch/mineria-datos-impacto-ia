@@ -1,6 +1,6 @@
 ---
-title: "Impacto de la IA"
-output: html_document
+title: "Impacto de la IA en los estudiantes"
+output:
 author:
   - Luis-Felipe Guajardo Torres
   - Pablo Morales Carvallo
