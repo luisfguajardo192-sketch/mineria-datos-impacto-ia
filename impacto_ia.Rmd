@@ -1,6 +1,9 @@
 ---
 title: "Impacto de la IA en los estudiantes"
 output:
+  html_document:
+    code_folding: hide
+    df_print: paged
 author:
   - Luis-Felipe Guajardo Torres
   - Pablo Morales Carvallo
@@ -10,6 +13,14 @@ author:
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  cols.print = 5,
+  echo    = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  ft.htmlscroll = TRUE
+)
+
 library(tidyverse)
 library(visdat)
 library(dlookr)
@@ -20,5 +31,16 @@ library(ggpmisc)
 library(VIM)
 library(mice)
 library(gridExtra)
+
+set_flextable_defaults(
+  font.size        = 10,
+  padding          = 4,
+  border.color     = "#cccccc",
+  theme_fun        = theme_booktabs,
+  digits           = 2,
+  decimal.mark     = ",",
+  big.mark         = ".",
+  na_str           = "—",
+)
 ```
 
