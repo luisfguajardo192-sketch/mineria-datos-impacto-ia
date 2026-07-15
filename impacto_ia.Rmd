@@ -57,6 +57,11 @@ ai_student_impact<-read.csv("ai_student_impact_dataset.csv",header = TRUE)
 flextable(head(ai_student_impact))
 ```
 
+### Variables del set de datos
+
+```{r}
+str(ai_student_impact)
+```
 ### Diagnóstico (ver si hay datos faltantes)
 ```{r}
 diagnose(ai_student_impact) %>% flextable()#diagnostico de los datos
