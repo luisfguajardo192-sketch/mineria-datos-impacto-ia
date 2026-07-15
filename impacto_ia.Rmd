@@ -67,3 +67,17 @@ str(ai_student_impact)
 diagnose(ai_student_impact) %>% flextable()#diagnostico de los datos
 ```
 
+### Variables categóricas
+```{r, fig.width=9, fig.height=16, out.width='100%',  dpi=60}
+par(mfrow = c(4, 2))  # establecer 4 filas, 2 columnas
+
+barplot(table(ai_student_impact$Major_Category), main = 'Major Category')
+barplot(table(ai_student_impact$Year_of_Study), main = 'Year of Study')
+barplot(table(ai_student_impact$Primary_Use_Case), main = 'Primary Use Case')
+barplot(table(ai_student_impact$Prompt_Engineering_Skill), main = 'Prompt Engineering Skill')
+barplot(table(ai_student_impact$Paid_Subscription), main = 'Paid Subscription')
+barplot(table(ai_student_impact$Institutional_Policy), main = 'Institutional Policy')
+barplot(table(ai_student_impact$Burnout_Risk_Level), main = 'Burnout Risk Level')
+
+par(mfrow = c(1, 1))  # restablecer 1 columna
+```
