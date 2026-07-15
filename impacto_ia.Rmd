@@ -81,3 +81,24 @@ barplot(table(ai_student_impact$Burnout_Risk_Level), main = 'Burnout Risk Level'
 
 par(mfrow = c(1, 1))  # restablecer 1 columna
 ```
+
+### Medidas estadísticas para variables numéricas
+
+Usamos skim para poder obtener el resumen de todos las columnas en una sola tabla
+
+```{r}
+#Variables numéricas: Pre_Semester_GPA, Weekly_GenAI_Hours, Tool_Diversity,Traditional_Study_Hours,Perceived_AI_Dependency,Anxiety_Level_During_Exams,Post_Semester_GPA, Post_Semester_GPA, Skill_Retention_Score         
+
+data = skim(ai_student_impact,Pre_Semester_GPA, Weekly_GenAI_Hours, Tool_Diversity,Traditional_Study_Hours,Perceived_AI_Dependency,Anxiety_Level_During_Exams,Post_Semester_GPA, Post_Semester_GPA, Skill_Retention_Score)
+
+estadisticos <- data |>
+  select(Variable = skim_variable,
+         'Mínimo'   =numeric.p0,
+         'Cuartil 1'= numeric.p25,
+         'Mediana'  = numeric.p50,
+         'Media'    = numeric.mean,
+         'Q3'       = numeric.p75,
+         'Max'      = numeric.p100)
+
+flextable(estadisticos)
+```
