@@ -7,7 +7,7 @@ output:
 author:
   - Luis-Felipe Guajardo Torres
   - Pablo Morales Carvallo
-  - rancisco Bahamondes Castro
+  - Francisco Bahamondes Castro
   - Gabriel Lafertte Cárcamo
   - Diego Meléndez Córdova
 ---
