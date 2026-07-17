@@ -23,6 +23,7 @@ knitr::opts_chunk$set(
   ft.htmlscroll = TRUE
 )
 
+library(dplyr)
 library(tidyverse)
 library(visdat)
 library(dlookr)
@@ -51,6 +52,29 @@ set_flextable_defaults(
 ai_student_impact<-read.csv("ai_student_impact_dataset.csv",header = TRUE)
 ```
 
+```{r}
+impacto_ia_estudiantes <- ai_student_impact |>
+  rename(
+    id_estudiante             = Student_ID,
+    especialidad              = Major_Category,
+    anio_estudio              = Year_of_Study,
+    promedio_previo           = Pre_Semester_GPA,
+    horas_semanales_ia        = Weekly_GenAI_Hours,
+    uso_principal             = Primary_Use_Case,
+    habilidad_prompt          = Prompt_Engineering_Skill,
+    diversidad_herramientas   = Tool_Diversity,
+    suscripcion_pagada        = Paid_Subscription,
+    horas_estudio_tradicional = Traditional_Study_Hours,
+    dependencia_ia_percibida  = Perceived_AI_Dependency,
+    politica_institucional    = Institutional_Policy,
+    ansiedad_durante_examenes = Anxiety_Level_During_Exams,
+    promedio_posterior        = Post_Semester_GPA,
+    retencion_habilidades     = Skill_Retention_Score,
+    riesgo_burnout            = Burnout_Risk_Level
+  )
+
+
+```
 ### Imprimir las primeras filas
 
 ```{r}
