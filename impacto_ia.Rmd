@@ -75,6 +75,45 @@ impacto_ia_estudiantes <- ai_student_impact |>
 
 
 ```
+
+```{r}
+# Traduce valores de variables categóricas
+impacto_ia_estudiantes$especialidad <- factor(impacto_ia_estudiantes$especialidad,
+  levels = c("Humanities", "Medical", "Business", "STEM", "Arts"),
+  labels = c("Humanidades", "Medicina", "Negocios", "STEM", "Artes")
+)
+impacto_ia_estudiantes$uso_principal <- factor(impacto_ia_estudiantes$uso_principal,
+  levels = c(
+    "Copywriting/Drafting", "Ideation", "Summarizing_Reading",
+    "Debugging/Troubleshooting", "Direct_Answer_Generation"
+  ),
+  labels = c(
+    "Redacción/Borradores", "Ideación", "Resumen de lecturas",
+    "Depuración/Resolución de problemas", "Generación de respuestas directas"
+  )
+)
+impacto_ia_estudiantes$politica_institucional <- factor(impacto_ia_estudiantes$politica_institucional,
+  levels = c("Allowed_With_Citation", "Strict_Ban", "Actively_Encouraged"),
+  labels = c("Permitido con citación", "Prohibición estricta", "Fomentado activamente")
+)
+# Para las variables ordinales, también ordena
+impacto_ia_estudiantes$anio_estudio <- factor(impacto_ia_estudiantes$anio_estudio,
+  levels = c("Freshman", "Sophomore", "Junior", "Senior", "Graduate"),
+  labels = c("Primer año", "Segundo año", "Tercer año", "Cuarto año", "Posgrado"),
+  ordered = TRUE
+)
+impacto_ia_estudiantes$habilidad_prompt <- factor(impacto_ia_estudiantes$habilidad_prompt,
+  levels = c("Beginner", "Intermediate", "Advanced"),
+  labels = c("Principiante", "Intermedio", "Avanzado"),
+  ordered = TRUE
+)
+impacto_ia_estudiantes$riesgo_burnout <- factor(impacto_ia_estudiantes$riesgo_burnout,
+  levels = c("Low", "Medium", "High"),
+  labels = c("Bajo", "Medio", "Alto"),
+  ordered = TRUE
+)
+
+```
 ### Imprimir las primeras filas
 
 ```{r}
