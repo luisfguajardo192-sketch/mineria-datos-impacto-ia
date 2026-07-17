@@ -167,3 +167,15 @@ estadisticos <- data |>
          'Máximo'          = numeric.p100)
 flextable(estadisticos)
 ```
+
+### Histograma con curva de densidad para una variable continua
+
+```{r, fig.width=9, fig.height=16, out.width='100%',  dpi=60}
+par(mfrow = c(4, 2))  # establecer 4 filas, 2 columnas
+hist(impacto_ia_estudiantes$promedio_previo,           main = "Promedio previo",              xlab = "Promedio")
+hist(impacto_ia_estudiantes$horas_semanales_ia,        main = "Horas semanales de IA",        xlab = "Horas")
+hist(impacto_ia_estudiantes$horas_estudio_tradicional, main = "Horas de estudio tradicional", xlab = "Horas")
+hist(impacto_ia_estudiantes$promedio_posterior,        main = "Promedio posterior",           xlab = "Promedio")
+hist(impacto_ia_estudiantes$retencion_habilidades,     main = "Retención de habilidades",     xlab = "Puntaje")
+par(mfrow = c(1, 1))  # restablecer 1 columna
+```
