@@ -117,30 +117,31 @@ impacto_ia_estudiantes$riesgo_burnout <- factor(impacto_ia_estudiantes$riesgo_bu
 ### Imprimir las primeras filas
 
 ```{r}
-flextable(head(ai_student_impact))
+flextable(head(impacto_ia_estudiantes))
 ```
 
 ### Variables del set de datos
 
 ```{r}
-str(ai_student_impact)
+str(impacto_ia_estudiantes)
 ```
 ### Diagnóstico (ver si hay datos faltantes)
 ```{r}
-diagnose(ai_student_impact) %>% flextable()#diagnostico de los datos
+diagnose(impacto_ia_estudiantes) %>% flextable()#diagnostico de los datos
 ```
 
 ### Variables categóricas
+
 ```{r, fig.width=9, fig.height=16, out.width='100%',  dpi=60}
 par(mfrow = c(4, 2))  # establecer 4 filas, 2 columnas
 
-barplot(table(ai_student_impact$Major_Category), main = 'Major Category')
-barplot(table(ai_student_impact$Year_of_Study), main = 'Year of Study')
-barplot(table(ai_student_impact$Primary_Use_Case), main = 'Primary Use Case')
-barplot(table(ai_student_impact$Prompt_Engineering_Skill), main = 'Prompt Engineering Skill')
-barplot(table(ai_student_impact$Paid_Subscription), main = 'Paid Subscription')
-barplot(table(ai_student_impact$Institutional_Policy), main = 'Institutional Policy')
-barplot(table(ai_student_impact$Burnout_Risk_Level), main = 'Burnout Risk Level')
+barplot(table(impacto_ia_estudiantes$especialidad), main = "Especialidad")
+barplot(table(impacto_ia_estudiantes$anio_estudio), main = "Año de estudio")
+barplot(table(impacto_ia_estudiantes$uso_principal), main = "Uso principal")
+barplot(table(impacto_ia_estudiantes$habilidad_prompt), main = "Habilidad de prompt")
+barplot(table(impacto_ia_estudiantes$suscripcion_pagada), main = "Suscripción pagada")
+barplot(table(impacto_ia_estudiantes$politica_institucional), main = "Política institucional")
+barplot(table(impacto_ia_estudiantes$riesgo_burnout), main = "Riesgo de burnout")
 
 par(mfrow = c(1, 1))  # restablecer 1 columna
 ```
@@ -152,16 +153,17 @@ Usamos skim para poder obtener el resumen de todos las columnas en una sola tabl
 ```{r}
 #Variables numéricas: Pre_Semester_GPA, Weekly_GenAI_Hours, Tool_Diversity,Traditional_Study_Hours,Perceived_AI_Dependency,Anxiety_Level_During_Exams,Post_Semester_GPA, Skill_Retention_Score         
 
-data = skim(ai_student_impact,Pre_Semester_GPA, Weekly_GenAI_Hours, Tool_Diversity,Traditional_Study_Hours,Perceived_AI_Dependency,Anxiety_Level_During_Exams,Post_Semester_GPA, Skill_Retention_Score)
-
+data = skim(impacto_ia_estudiantes,
+            promedio_previo, horas_semanales_ia, diversidad_herramientas,
+            horas_estudio_tradicional, dependencia_ia_percibida,
+            ansiedad_durante_examenes, promedio_posterior, retencion_habilidades)
 estadisticos <- data |>
-  select(Variable = skim_variable,
-         'Mínimo'   =numeric.p0,
-         'Primer cuartil'= numeric.p25,
-         'Mediana'  = numeric.p50,
-         'Media'    = numeric.mean,
-         'Tercer cuartil'       = numeric.p75,
-         'Máximo'      = numeric.p100)
-
+  select(Variable          = skim_variable,
+         'Mínimo'          = numeric.p0,
+         'Primer cuartil'  = numeric.p25,
+         'Mediana'         = numeric.p50,
+         'Media'           = numeric.mean,
+         'Tercer cuartil'  = numeric.p75,
+         'Máximo'          = numeric.p100)
 flextable(estadisticos)
 ```
